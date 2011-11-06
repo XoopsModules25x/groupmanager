@@ -1,5 +1,5 @@
 <?php
-// $Id: blocks.php,v 1.1 2007/08/31 00:47:16 Kaotik                    Exp $ //
+// $Id$ //
 //  ------------------------------------------------------------------------ //
 //                XOOPS - PHP Content Management System                      //
 //                    Copyright (c) 2000 XOOPS.org                           //

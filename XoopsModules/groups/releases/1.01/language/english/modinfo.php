@@ -1,5 +1,5 @@
 <?php
-// $Id: modinfo.php,v 1.9 2007/09/02 20:35:17 kaotik Exp $
+// $Id$
 //  ------------------------------------------------------------------------ //
 //                XOOPS - PHP Content Management System                      //
 //                    Copyright (c) 2000 XOOPS.org                           //
