@@ -1,5 +1,5 @@
 <?php
-// $Id: admin.php,v 1.5 2007/09/24 20:35:17 kaotik                     Exp $ //
+// $Id$ //
 //  ------------------------------------------------------------------------ //
 //                XOOPS - PHP Content Management System                      //
 //                    Copyright (c) 2000 XOOPS.org                           //
