@@ -1,0 +1,3 @@
+Originally developed by Kaotik with contributions from GibaPHP.
+
+Converted to XOOPS 2.5.x Admin GUI by Mamba.

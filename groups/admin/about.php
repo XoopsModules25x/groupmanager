@@ -1,5 +1,5 @@
 <?php
-// $Id$ //
+// $Id: admin.php 8094 2011-11-06 09:52:56Z beckmi $ //
 //  ------------------------------------------------------------------------ //
 //                XOOPS - PHP Content Management System                      //
 //                    Copyright (c) 2000 XOOPS.org                           //
@@ -26,21 +26,13 @@
 //  ------------------------------------------------------------------------ //
 //
 
-define("_AM_GROUPS_PERMISS_GRP_TITLE","Permission for each Group");
-define("_AM_GROUPS_PERMISS_GRP_DESC","Set which groups each group can change");
-define("_AM_GROUPS_ITEM_LIST","Can Change Permissions");
-define("_AM_GROUPS_TITLE_OF_FORM","Groups allowed to change permissions");
-define("_AM_GROUPS_PERM_DESC","Select which groups can change these permissions");
+include_once dirname(__FILE__) . '/admin_header.php';
 
-define("_AM_GROUPS_NAME_GROUP","Group Name");
-define("_AM_GROUPS_MEMBERS_ACTUALS","Current Members");
-define("_AM_GROUPS_ACTIONS","Action");
-define("_AM_GROUPS_ALL_USERS","All Users");
-define("_AM_GROUPS_MAIN","Main");
-define("_AM_GROUPS_PERMISSIONS","Permissions");
+xoops_cp_header();
 
+$aboutAdmin = new ModuleAdmin();
 
-//ModuleAdmin
-define('_AM_GROUPS_MISSING','Error: The ModuleAdmin class is missing. Please install the ModuleAdmin Class into /Frameworks (see /docs/readme.txt)');
-// Text for Admin footer
-define("_AM_GROUPS_ADMIN_FOOTER", "<div class='center smallsmall italic pad5'>GroupsManager is maintained by the <a class='tooltip' rel='external' href='http://xoops.org/' title='Visit XOOPS Community'>XOOPS Community</a></div>");
+echo $aboutAdmin->addNavigation('about.php');
+echo $aboutAdmin->renderAbout('6KJ7RW5DR3VTJ', false);
+
+include 'admin_footer.php';
