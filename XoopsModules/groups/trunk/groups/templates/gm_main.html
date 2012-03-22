@@ -11,7 +11,7 @@
   </tr>
 
 <{foreach item=grp from=$grpInfo}>
- <form name="form<{$grp.id}>" method="POST" action="index.php">
+ <form name="form<{$grp.id}>" method="POST" action="main.php">
 <input name="groupid" type="hidden" value="<{$grp.id}>" />
   <tr>
     <td id="grp1"><{$grp.name}></td>

@@ -26,5 +26,10 @@
 //  ------------------------------------------------------------------------ //
 define("_MI_GROUPS_NAME","Group Manager");
 define("_MI_GROUPS_DESC","Manage Groups");
+define("_MI_GROUPS_ADMIN0","Home");
+define("_MI_GROUPS_ADMIN1","Manage Groups");
+define("_MI_GROUPS_ADMIN2","Permissions");
+define("_MI_GROUPS_ABOUT","About");
+
 
 ?>

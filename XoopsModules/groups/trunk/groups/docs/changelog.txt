@@ -1,0 +1,10 @@
+Changelog (English)
+--------------------------
+
+Version 1.02 Beta (Mamba) 2012/03/21
+=================================
+- converted to XOOPS 2.5.x Admin GUI (mamba)
+
+Version 1.01  (Kaotik) 2007/09/25
+=================================
+- First release
