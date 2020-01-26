@@ -2,8 +2,8 @@
 ## GroupManager module for [XOOPS CMS 2.5.10+](https://xoops.org)
 [![Software License](https://img.shields.io/badge/license-GPL-brightgreen.svg?style=flat)](LICENSE) 
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/XoopsModules25x/groupmanager.svg?style=flat)](https://scrutinizer-ci.com/g/XoopsModules25x/groupmanager/?branch=master)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/166bbc6bf0934c9d8a34be46b36661dd)](https://www.codacy.com/app/mambax7/groupmanager_2)
-[![Code Climate](https://img.shields.io/codeclimate/github/XoopsModules25x/groupmanager.svg?style=flat)](https://codeclimate.com/github/XoopsModules25x/groupmanager)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/166bbc6bf0934c9d8a34be46b36661dd)](https://www.codacy.com/app/mambax7/groupmanager)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9b1aad9a5c92fd673065/maintainability)](https://codeclimate.com/github/mambax7/groupmanager/maintainability)
 [![Latest Pre-Release](https://img.shields.io/github/tag/XoopsModules25x/groupmanager.svg?style=flat)](https://github.com/XoopsModules25x/groupmanager/tags/)
 [![Latest Version](https://img.shields.io/github/release/XoopsModules25x/groupmanager.svg?style=flat)](https://github.com/XoopsModules25x/groupmanager/releases/)
 
