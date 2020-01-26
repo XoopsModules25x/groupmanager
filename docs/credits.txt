@@ -1,3 +1,6 @@
-Originally developed by Kaotik with contributions from GibaPHP.
+Credits
+===============
 
-Converted to XOOPS 2.5.x Admin GUI by Mamba.
+Originally developed by Kaotik  with contributions from GibaPHP.
+
+Version 2.01 was updated to XOOPS 2.5.11 by Michael Beck (Mamba)
