@@ -1,35 +1,46 @@
 <?php
-// $Id$
-//  ------------------------------------------------------------------------ //
-//                XOOPS - PHP Content Management System                      //
-//                    Copyright (c) 2000 XOOPS.org                           //
-//                       <http://www.xoops.org/>                             //
-//  ------------------------------------------------------------------------ //
-//  This program is free software; you can redistribute it and/or modify     //
-//  it under the terms of the GNU General Public License as published by     //
-//  the Free Software Foundation; either version 2 of the License, or        //
-//  (at your option) any later version.                                      //
-//                                                                           //
-//  You may not change or alter any portion of this comment or credits       //
-//  of supporting developers from this source code or any supporting         //
-//  source code which is considered copyrighted (c) material of the          //
-//  original comment or credit authors.                                      //
-//                                                                           //
-//  This program is distributed in the hope that it will be useful,          //
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of           //
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            //
-//  GNU General Public License for more details.                             //
-//                                                                           //
-//  You should have received a copy of the GNU General Public License        //
-//  along with this program; if not, write to the Free Software              //
-//  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA //
-//  ------------------------------------------------------------------------ //
-define("_MI_GROUPS_NAME","Group Manager");
-define("_MI_GROUPS_DESC","Manage Groups");
-define("_MI_GROUPS_ADMIN0","Home");
-define("_MI_GROUPS_ADMIN1","Manage Groups");
-define("_MI_GROUPS_ADMIN2","Permissions");
-define("_MI_GROUPS_ABOUT","About");
 
+/*
+ * You may not change or alter any portion of this comment or credits
+ * of supporting developers from this source code or any supporting source code
+ * which is considered copyrighted (c) material of the original comment or credit authors.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ */
 
-?>
+/**
+ * @copyright    XOOPS Project https://xoops.org/
+ * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+ * @package
+ * @since
+ * @author       Kaotik, GigaPHP, XOOPS Development Team
+ */
+define('_MI_GROUPS_NAME', 'Group Manager');
+define('_MI_GROUPS_DESC', 'Manage Groups');
+
+//Menu
+define('_MI_GROUPS_MENU_HOME', 'Home');
+define('_MI_GROUPS_MENU_01', 'Groups');
+define('_MI_GROUPS_MENU_02', 'Permissions');
+define('_MI_GROUPS_MENU_ABOUT', 'About');
+
+//Config
+define('MI_GROUPS_EDITOR_ADMIN', 'Editor: Admin');
+define('MI_GROUPS_EDITOR_ADMIN_DESC', 'Select the Editor to use by the Admin');
+define('MI_GROUPS_EDITOR_USER', 'Editor: User');
+define('MI_GROUPS_EDITOR_USER_DESC', 'Select the Editor to use by the User');
+
+//Help
+define('_MI_GROUPS_DIRNAME', basename(dirname(dirname(__DIR__))));
+define('_MI_GROUPS_HELP_HEADER', __DIR__ . '/help/helpheader.tpl');
+define('_MI_GROUPS_BACK_2_ADMIN', 'Back to Administration of ');
+define('_MI_GROUPS_OVERVIEW', 'Overview');
+
+//define('_MI_GROUPS_HELP_DIR', __DIR__);
+
+//help multi-page
+define('_MI_GROUPS_DISCLAIMER', 'Disclaimer');
+define('_MI_GROUPS_LICENSE', 'License');
+define('_MI_GROUPS_SUPPORT', 'Support');
