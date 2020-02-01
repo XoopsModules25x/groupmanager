@@ -23,8 +23,8 @@
                     </select>
                 </td>
                 <td>
-                    <input type="image" name="add" src="<{$xoops_url}>/modules/groups/images/arrow2.jpg" width="40" height="22"><br><br>
-                    <input type="image" name="del" src="<{$xoops_url}>/modules/groups/images/arrow.jpg" width="40" height="22">
+                    <input type="image" name="add" src="<{$xoops_url}>/modules/groups/assets/images/arrow2.jpg" width="40" height="22"><br><br>
+                    <input type="image" name="del" src="<{$xoops_url}>/modules/groups/assets/images/arrow.jpg" width="40" height="22">
 
                 </td>
                 <td>

@@ -7,7 +7,7 @@
 [![Latest Pre-Release](https://img.shields.io/github/tag/XoopsModules25x/groupmanager.svg?style=flat)](https://github.com/XoopsModules25x/groupmanager/tags/)
 [![Latest Version](https://img.shields.io/github/release/XoopsModules25x/groupmanager.svg?style=flat)](https://github.com/XoopsModules25x/groupmanager/releases/)
 
-**GroupManager** module for [XOOPS CMS](https://xoops.org) allows you to easily add or remove users from groups. It also allows you to set which group can change each others users, through XOOPS permissions..
+**GroupManager** module for [XOOPS CMS](https://xoops.org) allows you to easily add or remove users from groups. It also allows you to set which group can change each others users, through XOOPS permissions.
 
 [![Tutorial Available](https://xoops.org/images/tutorial-available-blue.svg)](https://www.gitbook.com/book/xoops/groupmanager-tutorial/) Tutorial: see [GitBook](https://www.gitbook.com/book/xoops/groupmanager-tutorial/). 
 To contribute to the Tutorial, [fork it on GitHub](https://github.com/XoopsDocs/groupmanager-tutorial)
