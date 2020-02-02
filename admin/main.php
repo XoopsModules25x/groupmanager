@@ -124,6 +124,7 @@ foreach (array_keys($foundusers) as $j) {
 
 $xoopsTpl->assign('allUsr', $allUsr);
 $xoopsTpl->assign('grpInfo', $grpInfo);
+$xoopsTpl->assign('mod_url', XOOPS_URL . '/modules/' . $moduleDirName);
 
 $xoopsTpl->display('db:gm_main.tpl');
 
