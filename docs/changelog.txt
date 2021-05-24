@@ -2,6 +2,8 @@
 <hr>
 - namespaces (mamba)
 - class autoloading (mamba)
+- fixed notice with missing smarty (goffy)
+- fixed wrong path for images (goffy)
 
 WORK IN PROGRESS
 
