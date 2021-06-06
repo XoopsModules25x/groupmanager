@@ -4,6 +4,12 @@
 - class autoloading (mamba)
 - fixed notice with missing smarty (goffy)
 - fixed wrong path for images (goffy)
+- replace index.html with index.php
+- deprecated $xoopsTpl->xoops_setCaching()
+- Nested 'dirname' (mamba)
+- PSR-12 Else-if (mamba)
+- Unnecessary double quotes (mamba)
+- cosmetics (mamba)
 
 WORK IN PROGRESS
 
