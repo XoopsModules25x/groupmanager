@@ -22,6 +22,10 @@ namespace XoopsModules\Groupmanager\Common;
  * @author       Mamba <mambax7@gmail.com>
  */
 
+use XoopsModules\Groupmanager\{
+    Helper
+};
+
 /**
  * Class SysUtility
  */
