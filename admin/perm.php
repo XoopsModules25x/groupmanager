@@ -21,7 +21,7 @@ require_once XOOPS_ROOT_PATH . '/class/template.php';
 if (!isset($xoopsTpl)) {
     $xoopsTpl = new XoopsTpl();
 }
-$xoopsTpl->xoops_setCaching(0);
+$xoopsTpl->caching = 0;
 $xoopsTpl->assign('xoops_dirname', $xoopsModule->getVar('dirname'));
 
 xoops_cp_header();
