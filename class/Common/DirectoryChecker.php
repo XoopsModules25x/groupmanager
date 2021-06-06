@@ -22,7 +22,7 @@ namespace XoopsModules\Groupmanager\Common;
 
 use Xmf\Request;
 
-require_once dirname(dirname(dirname(dirname(__DIR__)))) . '/mainfile.php';
+require_once dirname(__DIR__, 4) . '/mainfile.php';
 $moduleDirName      = \basename(\dirname(__DIR__, 2));
 $moduleDirNameUpper = mb_strtoupper($moduleDirName);
 xoops_loadLanguage('directorychecker', $moduleDirName);
