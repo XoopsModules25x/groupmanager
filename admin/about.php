@@ -15,6 +15,7 @@
  * @author      XOOPS Development Team
  */
 require_once __DIR__ . '/admin_header.php';
+/** @var Xmf\Module\Admin $adminObject */
 
 xoops_cp_header();
 

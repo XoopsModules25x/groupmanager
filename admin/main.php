@@ -116,6 +116,7 @@ for ($i = 0; $i < $count; ++$i) {
 Get all users
 //----------------------------------*/
 $allUsr = [];
+/** @var \XoopsMemberHandler $memberHandler */
 $memberHandler = xoops_getHandler('member');
 $foundusers    = $memberHandler->getUsers();
 foreach (array_keys($foundusers) as $j) {

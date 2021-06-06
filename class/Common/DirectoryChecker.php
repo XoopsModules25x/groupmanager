@@ -131,6 +131,7 @@ class DirectoryChecker
 }
 
 $op = Request::getString('op', '', 'POST');
+$path = '';
 switch ($op) {
     case 'createdir':
         if (\Xmf\Request::hasVar('path', 'POST')) {
