@@ -181,6 +181,9 @@ class Resizer
         return true;
     }
 
+    /**
+     *
+     */
     public function mergeImage()
     {
         $dest = \imagecreatefromjpeg($this->endFile);
