@@ -15,6 +15,9 @@
  * @license      GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @author       Kaotik, GigaPHP, XOOPS Development Team
  */
+
+/** @var \Xmf\Module\Admin $adminObject */
+
 require_once __DIR__ . '/admin_header.php';
 
 require_once XOOPS_ROOT_PATH . '/class/template.php';
