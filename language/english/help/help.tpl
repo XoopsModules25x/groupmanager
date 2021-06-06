@@ -27,7 +27,7 @@
     <h4 class="odd">TUTORIAL</h4> <br>
 
     <p class="even">
-        Tutorial has been started, but we might need your help! Please check out the status of the tutorial <a href="https://www.gitbook.com/book/xoops/ZZZZZZZZ-tutorial/" target="_blank">here </a>.
+        Tutorial has been started, but we might need your help! Please check out the status of the tutorial <a href="https://app.gitbook.com/@xoops/s/ZZZZZZZZ-tutorial/" target="_blank">here </a>.
         <br><br>To contribute to this Tutorial, <a href="https://github.com/XoopsDocs/ZZZZZZZZ-tutorial/" target="_blank">please fork it on GitHub</a>.
         <br> This document describes our <a href="https://xoops.gitbook.io/xoops-documentation-process/" target="_blank">Documentation Process</a> and it will help you to understand how to contribute.
         <br><br>

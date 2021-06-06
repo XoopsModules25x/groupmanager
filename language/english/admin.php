@@ -11,10 +11,8 @@
  */
 
 /**
- * @copyright    XOOPS Project https://xoops.org/
- * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
- * @package
- * @since
+ * @copyright    XOOPS Project (https://xoops.org)
+ * @license      GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @author       Kaotik, GigaPHP, XOOPS Development Team
  */
 define('_AM_GROUPS_PERMISS_GRP_TITLE', 'Permission for each Group');

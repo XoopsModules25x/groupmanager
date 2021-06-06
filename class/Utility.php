@@ -27,7 +27,6 @@ namespace XoopsModules\Groupmanager;
 class Utility extends Common\SysUtility
 {
     //--------------- Custom module methods -----------------------------
-
     /**
      * Access the only instance of this class
      *

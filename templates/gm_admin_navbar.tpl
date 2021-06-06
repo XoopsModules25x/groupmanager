@@ -49,6 +49,6 @@
 <!--    <ul id="tabmenu">-->
 <!--    <li><a href="index.php"><{$smarty.const._AM_GROUPS_MAIN}></a></li>-->
 <!--    <{ if $perallow eq 1}>-->
-<!--	<li><a href="perm.php"><{$smarty.const._AM_GROUPS_PERMISSIONS}></a></li>-->
+<!--    <li><a href="perm.php"><{$smarty.const._AM_GROUPS_PERMISSIONS}></a></li>-->
 <!--    <{/if}>-->
 <!--</ul>-->

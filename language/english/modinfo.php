@@ -11,10 +11,8 @@
  */
 
 /**
- * @copyright    XOOPS Project https://xoops.org/
- * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
- * @package
- * @since
+ * @copyright    XOOPS Project (https://xoops.org)
+ * @license      GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @author       Kaotik, GigaPHP, XOOPS Development Team
  */
 define('_MI_GROUPS_NAME', 'Group Manager');
@@ -33,7 +31,7 @@ define('MI_GROUPS_EDITOR_USER', 'Editor: User');
 define('MI_GROUPS_EDITOR_USER_DESC', 'Select the Editor to use by the User');
 
 //Help
-define('_MI_GROUPS_DIRNAME', basename(dirname(dirname(__DIR__))));
+define('_MI_GROUPS_DIRNAME', basename(dirname(__DIR__, 2)));
 define('_MI_GROUPS_HELP_HEADER', __DIR__ . '/help/helpheader.tpl');
 define('_MI_GROUPS_BACK_2_ADMIN', 'Back to Administration of ');
 define('_MI_GROUPS_OVERVIEW', 'Overview');

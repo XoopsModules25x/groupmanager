@@ -1,32 +1,22 @@
 <?php
 
-//  ------------------------------------------------------------------------ //
-//                XOOPS - PHP Content Management System                      //
-//                    Copyright (c) 2000 XOOPS.org                           //
-//                       <https://xoops.org>                             //
-//  ------------------------------------------------------------------------ //
-//  This program is free software; you can redistribute it and/or modify     //
-//  it under the terms of the GNU General Public License as published by     //
-//  the Free Software Foundation; either version 2 of the License, or        //
-//  (at your option) any later version.                                      //
-//                                                                           //
-//  You may not change or alter any portion of this comment or credits       //
-//  of supporting developers from this source code or any supporting         //
-//  source code which is considered copyrighted (c) material of the          //
-//  original comment or credit authors.                                      //
-//                                                                           //
-//  This program is distributed in the hope that it will be useful,          //
-//  but WITHOUT ANY WARRANTY; without even the implied warranty of           //
-//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            //
-//  GNU General Public License for more details.                             //
-//                                                                           //
-//  You should have received a copy of the GNU General Public License        //
-//  along with this program; if not, write to the Free Software              //
-//  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307 USA //
-//  ------------------------------------------------------------------------ //
+/*
+ * You may not change or alter any portion of this comment or credits
+ * of supporting developers from this source code or any supporting source code
+ * which is considered copyrighted (c) material of the original comment or credit authors.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ */
+
+/**
+ * @copyright      {@link https://xoops.org/ XOOPS Project}
+ * @license        {@link https://www.gnu.org/licenses/gpl-2.0.html GNU GPL 2 or later}
+ * @author         XOOPS Development Team
+ */
 //
 
-require_once dirname(dirname(dirname(__DIR__))) . '/include/cp_header.php';
 require_once __DIR__ . '/admin_header.php';
 
 require_once XOOPS_ROOT_PATH . '/class/template.php';
@@ -40,13 +30,15 @@ $xoopsTpl->assign('xoops_dirname', $GLOBALS['xoopsModule']->getVar('dirname'));
 // CHECK IF SUBMIT WAS PRESSED
 if (isset($_POST['add_x']) || isset($_POST['del_x'])) {
     if (isset($_POST['add_x'])) {
-        $memberHandler    = xoops_getHandler('member');
-        $membership = $memberHandler->addUserToGroup($_POST['groupid'], $_POST['all']);
+        /** @var \XoopsMemberHandler $memberHandler */
+        $memberHandler = xoops_getHandler('member');
+        $membership    = $memberHandler->addUserToGroup($_POST['groupid'], $_POST['all']);
     }
 
     if (isset($_POST['del_x'])) {
-        $memberHandler    = xoops_getHandler('member');
-        $membership = $memberHandler->removeUsersFromGroup($_POST['groupid'], [$_POST['curr']]);
+        /** @var \XoopsMemberHandler $memberHandler */
+        $memberHandler = xoops_getHandler('member');
+        $membership    = $memberHandler->removeUsersFromGroup($_POST['groupid'], [$_POST['curr']]);
     }
 }
 
@@ -67,19 +59,21 @@ if ($xoopsUser) {
         $groups = XOOPS_GROUP_ANONYMOUS;
 }
 $module_id = $GLOBALS['xoopsModule']->getVar('mid');
-$gpermHandler = xoops_getHandler('groupperm');
-if ($gpermHandler->checkRight($perm_name, $perm_itemid, $groups, $module_id)) {
-        // allowed, so display contents within the category
-        $xoopsTpl->assign('perallow', 1);
+/** @var \XoopsGroupPermHandler $grouppermHandler */
+$grouppermHandler = xoops_getHandler('groupperm');
+if ($grouppermHandler->checkRight($perm_name, $perm_itemid, $groups, $module_id)) {
+    // allowed, so display contents within the category
+    $xoopsTpl->assign('perallow', 1);
 } else {
-        // not allowed, display an error message or redirect to another page
-        $xoopsTpl->assign('perallow', 0);
+    // not allowed, display an error message or redirect to another page
+    $xoopsTpl->assign('perallow', 0);
 }
 //---------------------------------------
 */
 
 $grpInfo = [];
 
+/** @var \XoopsMemberHandler $memberHandler */
 $memberHandler = xoops_getHandler('member');
 $groups        = $memberHandler->getGroups();
 
@@ -99,9 +93,10 @@ for ($i = 0; $i < $count; ++$i) {
     if ($xoopsUser) {
         $groups2 = $xoopsUser->getGroups();
     }
-    $module_id    = $GLOBALS['xoopsModule']->getVar('mid');
-    $gpermHandler = xoops_getHandler('groupperm');
-    if ($gpermHandler->checkRight($perm_name, $perm_itemid, $groups2, $module_id)) {
+    $module_id = $GLOBALS['xoopsModule']->getVar('mid');
+    /** @var \XoopsGroupPermHandler $grouppermHandler */
+    $grouppermHandler = xoops_getHandler('groupperm');
+    if ($grouppermHandler->checkRight($perm_name, $perm_itemid, $groups2, $module_id)) {
     } else {
         continue;
     }
@@ -120,7 +115,8 @@ for ($i = 0; $i < $count; ++$i) {
 /*---------------------------//
 Get all users
 //----------------------------------*/
-$allUsr        = [];
+$allUsr = [];
+/** @var \XoopsMemberHandler $memberHandler */
 $memberHandler = xoops_getHandler('member');
 $foundusers    = $memberHandler->getUsers();
 foreach (array_keys($foundusers) as $j) {
