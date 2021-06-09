@@ -11,25 +11,27 @@
  */
 
 /**
- * @copyright    XOOPS Project https://xoops.org/
- * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
- * @package
- * @since
- * @author       XOOPS Development Team
+ * @copyright    XOOPS Project (https://xoops.org)
+ * @license      GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
+ * @author      XOOPS Development Team
  */
-include dirname(__DIR__) . '/preloads/autoloader.php';
 
-$moduleDirName      = basename(dirname(__DIR__));
+use Xmf\Module\Admin;
+use XoopsModules\Groupmanager\Helper;
+/** @var \XoopsModules\Groupmanager\Helper $helper */
+
+require dirname(__DIR__) . '/preloads/autoloader.php';
+
+$moduleDirName = basename(dirname(__DIR__));
 $moduleDirNameUpper = mb_strtoupper($moduleDirName);
 
-/** @var \XoopsModules\Groupmanager\Helper $helper */
-$helper = \XoopsModules\Groupmanager\Helper::getInstance();
+$helper = Helper::getInstance();
 $helper->loadLanguage('common');
 $helper->loadLanguage('feedback');
 
-$pathIcon32 = \Xmf\Module\Admin::menuIconPath('');
-if (is_object($helper->getModule())) {
-    //    $pathModIcon32 = $helper->getModule()->getInfo('modicons32');
+$pathIcon32 = Admin::menuIconPath('');
+$pathModIcon32 = XOOPS_URL .   '/modules/' . $moduleDirName . '/assets/images/icons/32/';
+if (is_object($helper->getModule()) && false !== $helper->getModule()->getInfo('modicons32')) {
     $pathModIcon32 = $helper->url($helper->getModule()->getInfo('modicons32'));
 }
 

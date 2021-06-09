@@ -11,29 +11,31 @@
  */
 
 /**
- * @copyright    XOOPS Project https://xoops.org/
- * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
- * @package
- * @since
- * @author       XOOPS Development Team
+ * @copyright    XOOPS Project (https://xoops.org)
+ * @license      GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
+ * @author      XOOPS Development Team
  */
-include dirname(__DIR__) . '/preloads/autoloader.php';
 
-require dirname(dirname(dirname(__DIR__))) . '/include/cp_header.php';
+use Xmf\Module\Admin;
+use XoopsModules\Groupmanager\Helper;
+
+require dirname(__DIR__) . '/preloads/autoloader.php';
+
+require dirname(__DIR__, 3) . '/include/cp_header.php';
 //require $GLOBALS['xoops']->path('www/class/xoopsformloader.php');
 require dirname(__DIR__) . '/include/common.php';
 
-$moduleDirName = basename(dirname(__DIR__));
+$moduleDirName = \basename(\dirname(__DIR__));
 
 /** @var \XoopsModules\Groupmanager\Helper $helper */
-$helper = \XoopsModules\Groupmanager\Helper::getInstance();
+$helper = Helper::getInstance();
 
 /** @var \Xmf\Module\Admin $adminObject */
-$adminObject = \Xmf\Module\Admin::getInstance();
+$adminObject = Admin::getInstance();
 
 //$myts = \MyTextSanitizer::getInstance();
 
-//if (!isset($GLOBALS['xoopsTpl']) || !($GLOBALS['xoopsTpl'] instanceof XoopsTpl)) {
+//if (!isset($GLOBALS['xoopsTpl']) || !($GLOBALS['xoopsTpl'] instanceof \XoopsTpl)) {
 //    require $GLOBALS['xoops']->path('class/template.php');
 //    $xoopsTpl = new XoopsTpl();
 //}

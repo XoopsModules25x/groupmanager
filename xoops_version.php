@@ -11,13 +11,12 @@
  */
 
 /**
- * @copyright    XOOPS Project https://xoops.org/
- * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
- * @package
- * @since
+ * @copyright    XOOPS Project (https://xoops.org)
+ * @license      GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @author       Kaotik (kaotik1@gmail.com), GigaPHP, XOOPS Development Team
  */
 $moduleDirName = basename(__DIR__);
+$moduleDirNameUpper = mb_strtoupper($moduleDirName);
 
 $modversion['version']       = '2.01';
 $modversion['release_date']  = '2020/01/27';
@@ -58,19 +57,22 @@ $modversion['helpsection'] = [
 ];
 
 //////////////////////////////////////////////////////////////////
-// Templates
-$modversion['templates'][1]['file']        = 'gm_admin_navbar.tpl';
-$modversion['templates'][1]['description'] = '';
-$modversion['templates'][2]['file']        = 'gm_main.tpl';
-$modversion['templates'][2]['description'] = '';
+// ------------------- Templates ------------------- //
+$modversion['templates'] = [
+    ['file' => 'gm_admin_navbar.tpl', 'description' => ''],
+    ['file' => 'gm_main.tpl', 'description' => ''],
+];
 
 /* Blocks
-$modversion['blocks'][1]['file'] = "shopping_cart.php";
-$modversion['blocks'][1]['name'] = 'Kshop Shopping Cart';
-$modversion['blocks'][1]['description'] = 'Displays the shopping cart as a block';
-$modversion['blocks'][1]['show_func'] = "shopping_cart";
-$modversion['blocks'][1]['template'] = 'shopping_cart.html';
-//----------------------*/
+$modversion['blocks'][] = [
+    'file' =>  "shopping_cart.php",
+    'name' =>  'Kshop Shopping Cart',
+    'description' =>  'Displays the shopping cart as a block',
+    'show_func' =>  "shopping_cart",
+    'template' =>  'shopping_cart.html',
+];
+//----------------------
+*/
 
 /* Config categories
 $modversion['configcat'][1]['nameid'] = 'settings';
@@ -79,13 +81,37 @@ $modversion['configcat'][1]['description'] = '_KSHOP_CAT_SETTINGS_DSC';
 //----------------------*/
 
 /*Preferences
-$i=1;
-$modversion['config'][$i]['name'] = 'debug';
-$modversion['config'][$i]['title'] = '_KS_DEBUG';
-$modversion['config'][$i]['description'] = '_KS_DEBUGDSC';
-$modversion['config'][$i]['formtype'] = 'yesno';
-$modversion['config'][$i]['valuetype'] = 'int';
-$modversion['config'][$i]['default'] = 0;
-$modversion['config'][$i]['category'] = 'settings';
-$i++;
+    $modversion['config'][] = [
+    'name' =>  'debug',
+    'title' =>  '_KS_DEBUG',
+    'description' =>  '_KS_DEBUGDSC',
+    'formtype' =>  'yesno',
+    'valuetype' =>  'int',
+    'default' =>  0,
+    'category' =>  'settings',
+];
 //----------------------*/
+
+/**
+ * Make Sample button visible?
+ */
+$modversion['config'][] = [
+    'name'        => 'displaySampleButton',
+    'title'       => 'CO_' . $moduleDirNameUpper . '_' . 'SHOW_SAMPLE_BUTTON',
+    'description' => 'CO_' . $moduleDirNameUpper . '_' . 'SHOW_SAMPLE_BUTTON_DESC',
+    'formtype'    => 'yesno',
+    'valuetype'   => 'int',
+    'default'     => 1,
+];
+
+/**
+ * Show Developer Tools?
+ */
+$modversion['config'][] = [
+    'name'        => 'displayDeveloperTools',
+    'title'       => 'CO_' . $moduleDirNameUpper . '_' . 'SHOW_DEV_TOOLS',
+    'description' => 'CO_' . $moduleDirNameUpper . '_' . 'SHOW_DEV_TOOLS_DESC',
+    'formtype'    => 'yesno',
+    'valuetype'   => 'int',
+    'default'     => 0,
+];

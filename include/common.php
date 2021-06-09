@@ -10,15 +10,18 @@
  */
 
 /**
- * @copyright    XOOPS Project https://xoops.org/
- * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
- * @package
- * @since
- * @author       XOOPS Development Team
+ * @copyright    XOOPS Project (https://xoops.org)
+ * @license      GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
+ * @author      XOOPS Development Team
  */
-include dirname(__DIR__) . '/preloads/autoloader.php';
 
-$moduleDirName      = basename(dirname(__DIR__));
+use Xmf\Module\Admin;
+use XoopsModules\Groupmanager\Helper;
+use XoopsModules\Groupmanager\Utility;
+
+require dirname(__DIR__) . '/preloads/autoloader.php';
+
+$moduleDirName      = \basename(\dirname(__DIR__));
 $moduleDirNameUpper = mb_strtoupper($moduleDirName); //$capsDirName
 
 /** @var \XoopsDatabase $db */
@@ -26,8 +29,8 @@ $moduleDirNameUpper = mb_strtoupper($moduleDirName); //$capsDirName
 /** @var \XoopsModules\Groupmanager\Utility $utility */
 $db      = \XoopsDatabaseFactory::getDatabaseConnection();
 $debug   = false;
-$helper  = \XoopsModules\Groupmanager\Helper::getInstance($debug);
-$utility = new \XoopsModules\Groupmanager\Utility();
+$helper  = Helper::getInstance($debug);
+$utility = new Utility();
 
 $helper->loadLanguage('common');
 
@@ -35,8 +38,8 @@ $helper->loadLanguage('common');
 //$categoryHandler     = new Groups\CategoryHandler($db);
 //$downloadHandler     = new Groups\DownloadHandler($db);
 
-$pathIcon16 = \Xmf\Module\Admin::iconUrl('', 16);
-$pathIcon32 = \Xmf\Module\Admin::iconUrl('', 32);
+$pathIcon16 = Admin::iconUrl('', 16);
+$pathIcon32 = Admin::iconUrl('', 32);
 if (is_object($helper->getModule())) {
     $pathModIcon16 = $helper->getModule()->getInfo('modicons16');
     $pathModIcon32 = $helper->getModule()->getInfo('modicons32');

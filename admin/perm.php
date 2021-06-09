@@ -11,19 +11,20 @@
  */
 
 /**
- * @copyright    XOOPS Project https://xoops.org/
- * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
- * @package
- * @since
+ * @copyright    XOOPS Project (https://xoops.org)
+ * @license      GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @author       Kaotik, GigaPHP, XOOPS Development Team
  */
-require __DIR__ . '/admin_header.php';
+
+/** @var \Xmf\Module\Admin $adminObject */
+
+require_once __DIR__ . '/admin_header.php';
 
 require_once XOOPS_ROOT_PATH . '/class/template.php';
 if (!isset($xoopsTpl)) {
     $xoopsTpl = new XoopsTpl();
 }
-$xoopsTpl->xoops_setCaching(0);
+$xoopsTpl->caching = 0;
 $xoopsTpl->assign('xoops_dirname', $xoopsModule->getVar('dirname'));
 
 xoops_cp_header();
@@ -34,7 +35,8 @@ require_once XOOPS_ROOT_PATH . '/class/xoopsform/grouppermform.php';
 $module_id = $xoopsModule->getVar('mid');
 
 //$item_list = array('1' => 'Category 1', '2' => 'Category 2', '3' => 'Category 3');
-$item_list     = [];
+$item_list = [];
+/** @var \XoopsMemberHandler $memberHandler */
 $memberHandler = xoops_getHandler('member');
 $groups        = $memberHandler->getGroups();
 foreach ($groups as $grp) {

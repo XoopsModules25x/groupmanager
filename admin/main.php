@@ -11,13 +11,17 @@
  */
 
 /**
- * @copyright    XOOPS Project https://xoops.org/
- * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
- * @package
- * @since
+ * @copyright    XOOPS Project (https://xoops.org)
+ * @license      GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @author       Kaotik, GigaPHP, XOOPS Development Team
  */
-require __DIR__ . '/admin_header.php';
+
+use Xmf\Module\Admin;
+/** @var Admin $adminObject */
+/** @var \XoopsMemberHandler $memberHandler */
+/** @var \XoopsGroupPermHandler $grouppermHandler */
+
+require_once __DIR__ . '/admin_header.php';
 
 require_once XOOPS_ROOT_PATH . '/class/template.php';
 if (!isset($xoopsTpl)) {
@@ -26,18 +30,16 @@ if (!isset($xoopsTpl)) {
 $xoopsTpl->caching = 0;
 $xoopsTpl->assign('xoops_dirname', $xoopsModule->getVar('dirname'));
 
-
 // CHECK IF SUBMIT WAS PRESSED
-/** @var \XoopsMemberHandler $memberHandler */
 if (isset($_POST['add_x']) || isset($_POST['del_x'])) {
     if (isset($_POST['add_x'])) {
-        $memberHandler    = xoops_getHandler('member');
-        $membership = $memberHandler->addUserToGroup($_POST['groupid'], $_POST['all']);
+        $memberHandler = xoops_getHandler('member');
+        $membership    = $memberHandler->addUserToGroup($_POST['groupid'], $_POST['all']);
     }
 
     if (isset($_POST['del_x'])) {
-        $memberHandler    = xoops_getHandler('member');
-        $membership = $memberHandler->removeUsersFromGroup($_POST['groupid'], [$_POST['curr']]);
+        $memberHandler = xoops_getHandler('member');
+        $membership    = $memberHandler->removeUsersFromGroup($_POST['groupid'], [$_POST['curr']]);
     }
 }
 
@@ -58,13 +60,14 @@ if ($xoopsUser) {
         $groups = XOOPS_GROUP_ANONYMOUS;
 }
 $module_id = $xoopsModule->getVar('mid');
-$gpermHandler = xoops_getHandler('groupperm');
-if ($gpermHandler->checkRight($perm_name, $perm_itemid, $groups, $module_id)) {
-        // allowed, so display contents within the category
-        $xoopsTpl->assign('perallow', 1);
+
+$grouppermHandler = xoops_getHandler('groupperm');
+if ($grouppermHandler->checkRight($perm_name, $perm_itemid, $groups, $module_id)) {
+    // allowed, so display contents within the category
+    $xoopsTpl->assign('perallow', 1);
 } else {
-        // not allowed, display an error message or redirect to another page
-        $xoopsTpl->assign('perallow', 0);
+    // not allowed, display an error message or redirect to another page
+    $xoopsTpl->assign('perallow', 0);
 }
 //---------------------------------------
 */
@@ -90,9 +93,10 @@ for ($i = 0; $i < $count; ++$i) {
     if ($xoopsUser) {
         $groups2 = $xoopsUser->getGroups();
     }
-    $module_id    = $xoopsModule->getVar('mid');
-    $gpermHandler = xoops_getHandler('groupperm');
-    if ($gpermHandler->checkRight($perm_name, $perm_itemid, $groups2, $module_id)) {
+    $module_id = $xoopsModule->getVar('mid');
+    /** @var \XoopsGroupPermHandler $grouppermHandler */
+    $grouppermHandler = xoops_getHandler('groupperm');
+    if ($grouppermHandler->checkRight($perm_name, $perm_itemid, $groups2, $module_id)) {
     } else {
         continue;
     }
@@ -111,7 +115,8 @@ for ($i = 0; $i < $count; ++$i) {
 /*---------------------------//
 Get all users
 //----------------------------------*/
-$allUsr        = [];
+$allUsr = [];
+/** @var \XoopsMemberHandler $memberHandler */
 $memberHandler = xoops_getHandler('member');
 $foundusers    = $memberHandler->getUsers();
 foreach (array_keys($foundusers) as $j) {
@@ -124,6 +129,7 @@ foreach (array_keys($foundusers) as $j) {
 
 $xoopsTpl->assign('allUsr', $allUsr);
 $xoopsTpl->assign('grpInfo', $grpInfo);
+$xoopsTpl->assign('mod_url', XOOPS_URL . '/modules/' . $moduleDirName);
 
 $xoopsTpl->display('db:gm_main.tpl');
 

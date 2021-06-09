@@ -12,11 +12,14 @@ namespace XoopsModules\Groupmanager\Common;
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
+
+
+
 /**
  * Feedback plugin for xoops modules
  *
  * @copyright      XOOPS Project  (https://xoops.org)
- * @license        GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+ * @license        GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @author         Michael Beck <mambax7@gmailc.com>
  */
 trait ModuleStats
@@ -28,8 +31,8 @@ trait ModuleStats
      */
     public static function getModuleStats($configurator, $moduleStats)
     {
-        if (count($configurator->moduleStats) > 0) {
-            foreach (array_keys($configurator->moduleStats) as $i) {
+        if (\count($configurator->moduleStats) > 0) {
+            foreach (\array_keys($configurator->moduleStats) as $i) {
                 $moduleStats[$i] = $configurator->moduleStats[$i];
             }
         }

@@ -12,13 +12,16 @@ namespace XoopsModules\Groupmanager\Common;
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 
+use RuntimeException;
+
+
 /**
  * Class Migrate synchronize existing tables with target schema
  *
  * @category  Migrate
  * @author    Richard Griffith <richard@geekwright.com>
  * @copyright 2016 XOOPS Project (https://xoops.org)
- * @license   GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+ * @license   GNU GPL 2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @link      https://xoops.org
  */
 class Migrate extends \Xmf\Database\Migrate
@@ -33,13 +36,13 @@ class Migrate extends \Xmf\Database\Migrate
     public function __construct()
     {
         $class = __NAMESPACE__ . '\\' . 'Configurator';
-        if (!class_exists($class)) {
-            throw new \RuntimeException("Class '$class' not found");
+        if (!\class_exists($class)) {
+            throw new RuntimeException("Class '$class' not found");
         }
         $configurator       = new $class();
         $this->renameTables = $configurator->renameTables;
 
-        $moduleDirName = basename(dirname(dirname(__DIR__)));
+        $moduleDirName = \basename(\dirname(__DIR__, 2));
         parent::__construct($moduleDirName);
     }
 
@@ -83,8 +86,8 @@ class Migrate extends \Xmf\Database\Migrate
     {
         $tableName    = 'newbb_posts_text';
         $srcTableName = 'newbb_posts';
-        if (false !== $this->tableHandler->useTable($tableName)
-            && false !== $this->tableHandler->useTable($srcTableName)) {
+        if ($this->tableHandler->useTable($tableName)
+            && $this->tableHandler->useTable($srcTableName)) {
             $attributes = $this->tableHandler->getColumnAttributes($tableName, 'dohtml');
             if (false === $attributes) {
                 $this->synchronizeTable($tableName);
@@ -105,6 +108,7 @@ class Migrate extends \Xmf\Database\Migrate
      */
     protected function preSyncActions()
     {
+        /*
         // change 'bb' table prefix to 'newbb'
         $this->changePrefix();
         // columns dohtml, dosmiley, doxcode, doimage and dobr moved between tables as some point
@@ -112,5 +116,6 @@ class Migrate extends \Xmf\Database\Migrate
         // Convert IP address columns from int to readable varchar(45) for IPv6
         $this->convertIPAddresses('newbb_posts', 'poster_ip');
         $this->convertIPAddresses('newbb_report', 'reporter_ip');
+        */
     }
 }

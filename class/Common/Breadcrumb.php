@@ -29,8 +29,11 @@ namespace XoopsModules\Groupmanager\Common;
  */
 
 use XoopsModules\Groupmanager\Common;
+use XoopsTpl;
+use xos_opal_Theme;
 
-defined('XOOPS_ROOT_PATH') || exit('XOOPS Root Path not defined');
+
+
 
 /**
  * Class Breadcrumb
@@ -42,7 +45,7 @@ class Breadcrumb
 
     public function __construct()
     {
-        $this->dirname = basename(dirname(dirname(__DIR__)));
+        $this->dirname = \basename(\dirname(__DIR__, 2));
     }
 
     /**
@@ -64,13 +67,13 @@ class Breadcrumb
      */
     public function render()
     {
-        if (!isset($GLOBALS['xoTheme']) || !is_object($GLOBALS['xoTheme'])) {
+        if (!isset($GLOBALS['xoTheme']) || !\is_object($GLOBALS['xoTheme'])) {
             require $GLOBALS['xoops']->path('class/theme.php');
-            $GLOBALS['xoTheme'] = new \xos_opal_Theme();
+            $GLOBALS['xoTheme'] = new xos_opal_Theme();
         }
 
         require $GLOBALS['xoops']->path('class/template.php');
-        $breadcrumbTpl = new \XoopsTpl();
+        $breadcrumbTpl = new XoopsTpl();
         $breadcrumbTpl->assign('breadcrumb', $this->bread);
         $html = $breadcrumbTpl->fetch('db:' . $this->dirname . '_common_breadcrumb.tpl');
         unset($breadcrumbTpl);
